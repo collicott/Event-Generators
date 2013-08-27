@@ -1,0 +1,8 @@
+# Ignore produced .root files 
+*.root
+
+#Ignore Versions directory
+/Versions/
+
+# Ignore log files
+*.log

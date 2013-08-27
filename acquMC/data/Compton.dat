@@ -1,0 +1,60 @@
+################################################################################
+#--Author	Cristina Collicott
+#
+# Setup file for compton scattering off the proton
+#
+# To use invoke... AcquMC Compton.dat
+################################################################################
+#
+#		#events/run	Random seed	#runs
+Number-Throws:	10000		888888		1		
+#
+################################################################################
+#
+# Baryon resonances
+#
+#		Name	PDG code
+Resonance:	P33	2214
+#		Name	Peak Mass(GeV)	Width(GeV)
+#Resonance:	S11	1.535		0.150
+#
+################################################################################
+# Beam parameters
+################################################################################
+#
+#	PDG-index	Source x,y,z (cm)
+Beam: 	22		0.0 	0.0 	-500.
+#
+# Beam Kinetic Energy	Form					min max  #pts 
+P-Distr: Beam T-Dist	1/x	                                0.2 0.4 200
+#P-Distr: Beam T-Dist	Uniform					0.3 0.5  200
+#P-Distr: Beam T-Dist	1/x*TMath::BreitWigner(x,0.294,0.12)	0.3 0.5  200
+#
+## Beam Angle              Form                                 min max   #pts
+P-Distr: Beam Cos(Theta)   TMath::Gaus(x,1.0,0.000001)		0.9999975 1.0  2000
+#
+################################################################################
+# Target parameters
+################################################################################
+#		Mass		Radius	Length	Center (x,y,z)
+Target: 	2212    	2.5	10.0   	0.0 	0.0 	0.0
+#
+################################################################################
+# Define Pi0 production reaction
+################################################################################
+#
+# The reaction "particle"
+#	  Name		PDG	Decay?	Track?	Parent	Opt
+Particle: Delta		P33	1	0	NULL	NULL
+#
+# Primary Particles
+Particle: Gamma		 22	0	1	Delta	NULL
+Particle: Proton       2212	0	1	Delta	NULL
+#
+###
+################################################################################
+## Output
+################################################################################
+#
+#Tree-Output:  Dilepton_mix	2
+Ntuple-Output: output/Compton_mc_out

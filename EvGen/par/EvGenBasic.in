@@ -1,0 +1,31 @@
+#
+# Input for EvGenBasic
+#
+# These are pretty self-explanatory...
+#
+#Particle: g
+Particle: p
+#
+TargetLength: 0.1
+#TargetLength: 2.0
+#TargetLength: 5.0
+#TargetLength: 10.0
+#
+BeamSpotRadius: 0.50
+#
+Throws: 10000
+#
+#ParticleEnergy: 10 50 5
+#ParticleEnergy: 20 35 1
+#ParticleEnergy: 200 200 1
+ParticleEnergy: 50 50 1
+#
+#LabTheta: 30 90 20
+#LabTheta: 10 170 20
+#LabTheta: 20 40 20
+#LabTheta: 45 55 10
+LabTheta: 90 90 1
+#
+#LabPhi: 0 90 15
+#LabPhi: 0 180 15
+LabPhi: 45 45 1
